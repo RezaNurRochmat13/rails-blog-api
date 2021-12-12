@@ -10,11 +10,11 @@ class ProductsController < ApplicationController
             count: products.count,
             total: products.total_pages
         }
-    }
+    }, status: :ok
   end
 
   def create
-    product = Product.create(create_params)
+    product = Product.create!(create_params)
 
     render json: {
         data: product
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
 
   rescue StandardError => e
     render json: {
-        message: e
+        message: e.to_s
     }, status: :bad_request
   end
 
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
 
     rescue ActiveRecord::RecordNotFound => e
         render json: {
-            message: e
+            message: e.to_s
         }, status: :not_found
   end
 

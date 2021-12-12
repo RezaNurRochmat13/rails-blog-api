@@ -25,10 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'faker'
-
 # Kaminari pagination
 gem 'kaminari'
+
+gem 'pry', '~> 0.13.1'
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot'
+  gem 'faker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
